@@ -1,5 +1,12 @@
 # My own Oh-My-Fish configurations #
 
+> A set of [Oh My Fish](https://github.com/oh-my-fish/oh-my-fish) configurations
+
+[![MIT License](https://img.shields.io/badge/license-MIT-007EC7.svg?style=flat-square)](/LICENSE)
+[![Fish Shell Version](https://img.shields.io/badge/fish-v2.2.0-007EC7.svg?style=flat-square)](http://fishshell.com)
+[![Oh My Fish Framework](https://img.shields.io/badge/Oh%20My%20Fish-Framework-007EC7.svg?style=flat-square)](https://www.github.com/oh-my-fish/oh-my-fish)
+
+
 ## Install ##
 
 1. install the fish shell > 2.0 (https://fishshell.com/)

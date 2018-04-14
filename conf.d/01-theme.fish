@@ -7,7 +7,7 @@ function _replace_session_theme -a target_theme
     set -q current_theme
         and autoload -e {$OMF_CONFIG,$OMF_PATH}/themes/$current_theme{,/functions}
     set -l theme_path {$OMF_CONFIG,$OMF_PATH}/themes*/$target_theme{,/functions}
-    debug_print_variable "theme_path = $theme_path"
+    debug_print_variable "theme_path"
     set fish_function_path $theme_path[1] $fish_function_path
     return 0
 end

@@ -17,7 +17,6 @@ if echo $TERM | grep -q '^linux'
     # linux terminal (console) cannot display fancy fonts
     _replace_session_theme batman
 else
-    set fish_color_autosuggestion yellow brblack
     set -g theme_nerd_fonts yes
 end
 

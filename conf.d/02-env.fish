@@ -29,11 +29,11 @@ set -g fish_pager_color_progress brwhite\x1e\x2d\x2dbackground\x3dcyan
 set -g fish_key_bindings fish_default_key_bindings
 set -g fish_user_abbreviations ll\x20ls\x20\x2dl\x1ep\x20proxychains\x1es\x20sudo\x1esp\x20sudo\x20proxychains
 
-set -g fish_function_path (cd (dirname (status --current-filename))/..; and pwd)/functions $fish_function_path
+set -g fish_function_path (pushd (dirname (status --current-filename))/..; and pwd; popd)/functions $fish_function_path
 
 set -gx GOROOT /usr/local/go
 set -gx GOPATH $HOME/Projects/go
-set -gx PATH $PATH ~/bin ~/bin/python-apps/bin $GOPATH/bin $GOROOT/bin ~/.yarn/bin
+set -gx PATH $HOME/.cargo/bin $PATH ~/bin ~/bin/python-apps/bin $GOPATH/bin $GOROOT/bin ~/.yarn/bin
 set -gx WORKON_HOME $HOME/.virtualenvs
 set -gx PROJECT_HOME $HOME/Projects
 set -gx UCANACCESS_HOME $HOME/bin/UCanAccess-4.0.2-bin

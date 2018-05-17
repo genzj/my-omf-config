@@ -18,6 +18,10 @@
     * [bobthefish](https://github.com/oh-my-fish/theme-bobthefish) for xterm and
     * [batman](https://github.com/oh-my-fish/theme-batman) for linux term (console)
 
+**NOTE** batman may crash the omf theme by putting prompt file in fish config
+path. execute `rm ~/.config/fish/functions/fish_prompt.fish` after installing
+batman.
+
 4. install nerd font for best visualization: https://github.com/ryanoasis/nerd-fonts
 
 5. *optional* install external libraries:

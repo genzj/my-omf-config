@@ -1,10 +1,14 @@
 set -g SSH_ENV $HOME/.ssh/environment
 
+function translate_script
+    sed -e 's/^\([^=]\+\)=\([^;]\+\).*$/set -gx \1 \2/' $SSH_ENV > $SSH_ENV.fish
+end
+
 function create_agent
     ssh-agent > $SSH_ENV
-    sed -i -e 's/^\([^=]\+\)=\([^;]\+\).*$/set -gx \1 \2/' $SSH_ENV
-    chmod 600 $SSH_ENV
-    source $SSH_ENV
+    translate_script
+    chmod 600 $SSH_ENV.fish
+    source $SSH_ENV.fish
     add_keys
 end
 
@@ -22,8 +26,11 @@ end
 
 function start_agent
     if test -f $SSH_ENV
+        translate_script
+    end
+    if test -f $SSH_ENV.fish
         # Source SSH settings, if applicable
-        source $SSH_ENV >/dev/null ^&1
+        source $SSH_ENV.fish >/dev/null ^&1
         ps -ef | grep $SSH_AGENT_PID | grep 'ssh-agent\(\.exe\)\?$' > /dev/null ;
             or create_agent
     else

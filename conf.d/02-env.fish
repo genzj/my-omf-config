@@ -33,7 +33,7 @@ set -g fish_function_path (pushd (dirname (status --current-filename))/..; and p
 set -gx GOROOT /usr/local/go
 set -gx GOPATH $HOME/Projects/go
 
-add_path_if_exists /usr/local/cuda-9.0/bin $HOME/.cargo/bin ~/.local/bin ~/bin $GOPATH/bin $GOROOT/bin ~/.yarn/bin ~/bin/python-apps/bin /snap/bin
+add_path_if_exists /usr/local/cuda-9.0/bin $HOME/.cargo/bin ~/.local/bin ~/bin $GOPATH/bin $GOROOT/bin ~/.yarn/bin /snap/bin
 set -gx WORKON_HOME $HOME/.virtualenvs
 set -gx PROJECT_HOME $HOME/Projects
 set -gx UCANACCESS_HOME $HOME/bin/UCanAccess-4.0.2-bin

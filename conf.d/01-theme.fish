@@ -1,5 +1,6 @@
 function _replace_session_theme -a target_theme
     if test -f $OMF_CONFIG/theme
+        read current_theme < $OMF_CONFIG/theme
         test "$target_theme" = "$current_theme"; and return 0
     end
 
@@ -8,7 +9,7 @@ function _replace_session_theme -a target_theme
         and autoload -e {$OMF_CONFIG,$OMF_PATH}/themes/$current_theme{,/functions}
     set -l theme_path {$OMF_CONFIG,$OMF_PATH}/themes*/$target_theme{,/functions}
     debug_print_variable "theme_path"
-    set fish_function_path $theme_path[1] $fish_function_path
+    set fish_function_path $theme_path $fish_function_path
     return 0
 end
 

@@ -1,5 +1,10 @@
 if status --is-interactive
-    abbr --add --global ll 'ls -lah'
+    if which lsd >/dev/null
+        abbr --add --global ls 'lsd'
+        abbr --add --global ll 'lsd -lah'
+    else
+        abbr --add --global ll 'ls -lah'
+    end
     abbr --add --global p 'proxychains'
     abbr --add --global s 'sudo'
     abbr --add --global sp 'sudo proxychains'

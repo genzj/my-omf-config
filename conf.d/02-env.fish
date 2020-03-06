@@ -33,7 +33,8 @@ set -g fish_function_path (pushd (dirname (status --current-filename))/..; and p
 set -gx GOROOT /snap/go/current
 set -gx GOPATH $HOME/Projects/go
 
-set -gx WORKON_HOME $HOME/.virtualenvs
+set -gx WORKON_HOME $HOME/.venvs
+set -gx VIRTUALFISH_HOME $HOME/.venvs
 set -gx PROJECT_HOME $HOME/Projects
 set -gx UCANACCESS_HOME $HOME/bin/UCanAccess-4.0.2-bin
 

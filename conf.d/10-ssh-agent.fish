@@ -30,7 +30,7 @@ function start_agent
     end
     if test -f $SSH_ENV.fish
         # Source SSH settings, if applicable
-        source $SSH_ENV.fish >/dev/null ^&1
+        source $SSH_ENV.fish &>/dev/null
         ps -ef | grep $SSH_AGENT_PID | grep 'ssh-agent\(\.exe\)\?$' > /dev/null ;
             or create_agent
     else

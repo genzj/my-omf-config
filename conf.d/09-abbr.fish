@@ -1,17 +1,29 @@
 if status --is-interactive
-    if which lsd >/dev/null
+    if which lsd &>/dev/null
+        abbr --add --global l 'lsd'
         abbr --add --global ls 'lsd'
         abbr --add --global ll 'lsd -lah'
     else
         abbr --add --global ll 'ls -lah'
     end
-    abbr --add --global p 'proxychains'
+    if which microk8s.kubectl &>/dev/null
+        abbr --add --global kubectl 'microk8s.kubectl'
+    end
+
+    if which proxychains &>/dev/null
+        abbr --add --global p 'proxychains -q'
+        abbr --add --global sp 'sudo proxychains -q'
+
+        if which apt &>/dev/null
+            abbr --add --global aptupd 'sudo proxychains -q apt update'
+            abbr --add --global aptupg 'sudo proxychains -q apt upgrade'
+            abbr --add --global aptupl 'sudo proxychains -q apt list --upgradable'
+        end
+    end
+
     abbr --add --global s 'sudo'
-    abbr --add --global sp 'sudo proxychains'
 
-    abbr --add --global aptupd 'sudo proxychains apt update'
-    abbr --add --global aptupg 'sudo proxychains apt upgrade'
-    abbr --add --global aptupl 'sudo proxychains apt list --upgradable'
-
-    abbr --add --global download 'http --download'
+    if which http &>/dev/null
+        abbr --add --global download 'http --download'
+    end
 end

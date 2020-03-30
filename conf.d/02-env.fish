@@ -30,7 +30,6 @@ set -g fish_key_bindings fish_default_key_bindings
 
 set -g fish_function_path (pushd (dirname (status --current-filename))/..; and pwd; popd)/functions $fish_function_path
 
-set -gx GOROOT /snap/go/current
 set -gx GOPATH $HOME/Projects/go
 
 set -gx WORKON_HOME $HOME/.venvs

@@ -15,9 +15,15 @@ if status --is-interactive
         abbr --add --global sp 'sudo proxychains -q'
 
         if which apt &>/dev/null
-            abbr --add --global aptupd 'sudo proxychains -q apt update'
-            abbr --add --global aptupg 'sudo proxychains -q apt upgrade'
-            abbr --add --global aptupl 'sudo proxychains -q apt list --upgradable'
+            if test -e ~/.useproxy
+                abbr --add --global aptupd 'sudo proxychains -q apt update'
+                abbr --add --global aptupg 'sudo proxychains -q apt upgrade'
+                abbr --add --global aptupl 'sudo proxychains -q apt list --upgradable'
+            else
+                abbr --add --global aptupd 'sudo apt update'
+                abbr --add --global aptupg 'sudo apt upgrade'
+                abbr --add --global aptupl 'sudo apt list --upgradable'
+            end
         end
     end
 

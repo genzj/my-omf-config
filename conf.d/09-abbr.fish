@@ -32,4 +32,8 @@ if status --is-interactive
     if which http &>/dev/null
         abbr --add --global download 'http --download'
     end
+
+    if which fdfind &>/dev/null
+        abbr --add --global fd 'fdfind'
+    end
 end

@@ -38,5 +38,8 @@ function start_agent
     end
 end
 
-start_agent
+if test -z "$SSH_AUTH_SOCK"
+    # only start agent when SSH_AUTH_SOCK hasn't been set for the compatibility with KeePassXC
+    start_agent
+end
 

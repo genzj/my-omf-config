@@ -18,6 +18,13 @@ add_path_if_exists $GOPATH/bin $GOROOT/bin
 
 # pyenv
 add_path_if_exists $HOME/.pyenv/bin
+if type -q pyenv
+    set -Ux PYENV_ROOT $HOME/.pyenv
+    set -U fish_user_paths $PYENV_ROOT/bin $fish_user_paths
+
+    # Load pyenv automatically
+    pyenv init - | source
+end
 
 # Poetry dependency management for Python
 add_path_if_exists $HOME/.poetry/bin

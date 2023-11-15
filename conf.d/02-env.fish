@@ -41,3 +41,9 @@ test -d /usr/local/cuda/ ; and set -gx LD_LIBRARY_PATH "$LD_LIBRARY_PATH:/usr/lo
 
 ulimit -S -c unlimited
 
+# this is specifically for bobthefish
+# TODO: only set them when the theme is bobthefish
+if [ -n "$nvm_data" ]
+    set -g theme_display_node yes
+    set -g NVM_DIR $nvm_data
+end

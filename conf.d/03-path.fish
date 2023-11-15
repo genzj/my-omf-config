@@ -1,3 +1,5 @@
+# cuda related
+add_path_if_exists /opt/cuda/bin
 # cuda 10.1 related
 add_path_if_exists /usr/local/cuda-10.1/bin /usr/local/cuda-10.1/NsightCompute-2019.1
 

@@ -21,3 +21,9 @@ else
     set -g theme_nerd_fonts yes
 end
 
+# override the default/theme-provided greeting if the neofetch is available
+if type -q neofetch
+    function fish_greeting
+        neofetch
+    end
+end

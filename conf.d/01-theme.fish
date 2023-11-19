@@ -22,8 +22,16 @@ else
 end
 
 # override the default/theme-provided greeting if the neofetch is available
+# to enable logo display, use kitty and save the logo to ~/themes/logo_[size].png
 if type -q neofetch
     function fish_greeting
-        neofetch
+        set -f args
+        set logos ~/themes/logo_*.png
+        set logo "$logos[1]"
+        if test -f "$logo" -a "$TERM" = "xterm-kitty"
+            set -l size (echo "$logo" | sed -e 's/.*_\([0-9]\+\)\.png/\1/')
+            set -a args --kitty (realpath "$logo") --size "$size"
+        end
+        neofetch $args
     end
 end

@@ -36,4 +36,8 @@ if status --is-interactive
     if which fdfind &>/dev/null
         abbr --add --global fd 'fdfind'
     end
+
+    if test -n "$KITTY_PID"
+        abbr --add --global kssh 'kitten ssh'
+    end
 end

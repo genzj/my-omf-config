@@ -31,7 +31,7 @@
 
 5. *optional* install external libraries:
 
-    * [autojump](https://github.com/wting/autojump) for quick & smart directory changing
+    * [autojump-rs](https://github.com/xen0n/autojump-rs) for quick & smart directory changing
     * [virtualfish](https://github.com/adambrenecki/virtualfish) for python virtualenv management
 
 6. clone the configuration and replace default omf config
@@ -46,6 +46,6 @@
 * automatically theme switch (bobthefish for xterm and batman Linux term)
 * basic color settings
 * activate ssh-agent automatically
-* support autojump
+* support autojump/autojump-rs
 * support virtualfish
 * easy configuration management

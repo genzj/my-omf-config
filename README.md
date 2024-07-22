@@ -48,4 +48,5 @@
 * activate ssh-agent automatically
 * support autojump/autojump-rs
 * support virtualfish
+* support mise
 * easy configuration management
